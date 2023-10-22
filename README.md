@@ -5,7 +5,7 @@ Sistem informasi sekolah berbasis laravel 8 dengan template dashboard
 [Stisla](https://getstisla.com/)
 ## Authors
 
-- [Pascal Adnan](https://www.github.com/lacsapadnan)
+- [Pascal Adnan](https://www.github.com/Rossadwi)
 
 
 ## Fitur
@@ -32,7 +32,7 @@ Sistem informasi sekolah berbasis laravel 8 dengan template dashboard
 clone project atau download
 
 ```bash
-  git clone https://github.com/lacsapadnan/Sistem-Informasi-Sekolah.git
+  git clone https://github.com/Rossadwi/siprestof.git
   cd Sistem-Informasi-Sekolah
   npm install
   composer install
@@ -82,15 +82,5 @@ Siswa
   email : siska@mail.com
   password : siska123
 ```
-## Update Selanjutnya
 
-- Fitur Pengumuman Sekolah
-
-- Fitur Absensi (Premium)
-
-- Fitur Kuis atau Ujian (Premium)
-
-- Fitur Tabungan Siswa via Midtrans (Premium)
-
-- Fitur Pembayaran Sekolah via Midtrans (Premium)
-
+# siprestof
