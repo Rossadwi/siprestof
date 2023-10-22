@@ -8,8 +8,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4>List Siswa</h4>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Guru</button>
+                        <h4>Kelola Mahasiswa</h4>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Mahasiswa</button>
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('success'))
@@ -27,8 +27,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Siswa</th>
-                                        <th>NIS</th>
+                                        <th>Nama Mahasiswa</th>
+                                        <th>NIM</th>
                                         <th>Kelas</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -39,7 +39,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nama }}</td>
                                         <td>{{ $data->nis }}</td>
-                                        <td>{{ $data->kelas->nama_kelas }}</td>
+                                        <td>{{ $data->kelas_id }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('siswa.show', Crypt::encrypt($data->id)) }}" class="btn btn-primary btn-sm" style="margin-right: 8px"><i class="nav-icon fas fa-user"></i> &nbsp; Profile</a>
@@ -63,7 +63,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Tambah Siswa</h5>
+                            <h5 class="modal-title">Tambah Mahasiswa</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -86,17 +86,17 @@
                                         </div>
                                         @endif
                                         <div class="form-group">
-                                            <label for="nama">Nama Siswa</label>
-                                            <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="{{ __('Nama Siswa') }}">
+                                            <label for="nama">Nama Mahasiswa</label>
+                                            <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="{{ __('Nama Mahasiswa') }}">
                                         </div>
                                         <div class="d-flex justify-content-between">
                                             <div class="form-group">
-                                                <label for="nis">NIS</label>
-                                                <input type="number" id="nis" name="nis" class="form-control @error('nis') is-invalid @enderror" placeholder="{{ __('NIS Siswa') }}">
+                                                <label for="nis">NIM</label>
+                                                <input type="number" id="nis" name="nis" class="form-control @error('nis') is-invalid @enderror" placeholder="{{ __('Nomor Induk Mahasiswa') }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="telp">No. Telp</label>
-                                                <input type="number" id="telp" name="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="{{ __('No. Telp Siswa') }}">
+                                                <input type="number" id="telp" name="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="{{ __('No. Telp Mahasiswa') }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -113,7 +113,7 @@
                                             <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" placeholder="{{ __('Alamat') }}"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="foto">Foto Siswa</label>
+                                            <label for="foto">Foto Mahasiswa</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input id="foto" type="file" name="foto" class="form-control @error('foto') is-invalid @enderror" id="foto">

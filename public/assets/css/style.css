@@ -2001,12 +2001,8 @@ a.bb {
   content: '/'; }
 
 .login-brand {
-  margin: 20px 0;
-  margin-bottom: 40px;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #666;
+  margin: 10px 0;
+  margin-bottom: 10px;
   text-align: center; }
 
 .font-weight-600 {

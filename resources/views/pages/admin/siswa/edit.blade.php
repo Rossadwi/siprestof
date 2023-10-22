@@ -20,7 +20,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h4>Edit Siswa {{ $siswa->nama }}</h4>
+                            <h4>Edit Mahasiswa {{ $siswa->nama }}</h4>
                             <a href="{{ route('siswa.index') }}" class="btn btn-primary">Kembali</a>
                         </div>
                         <div class="card-body">
@@ -38,12 +38,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nama">Nama Siswa</label>
+                                    <label for="nama">Nama Mahasiswa</label>
                                     <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="{{ __('Nama Siswa') }}" value="{{ $siswa->nama }}">
                                 </div>
                                 <div class="d-flex">
                                     <div class="form-group">
-                                        <label for="nis">NIS</label>
+                                        <label for="nis">NIM</label>
                                         <input type="text" id="nis" name="nis" class="form-control @error('nis') is-invalid @enderror" placeholder="{{ __('NIS Siswa') }}" value="{{ $siswa->nis }}">
                                     </div>
                                     <div class="form-group ml-4">

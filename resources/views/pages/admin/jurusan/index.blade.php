@@ -1,124 +1,75 @@
 @extends('layouts.main')
-@section('title', 'List Jurusan')
+@section('title', 'Dashboard')
 
 @section('content')
-<section class="section custom-section">
-    <div class="section-body">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <h4>List Jurusan</h4>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Jurusan</button>
-                    </div>
-                    <div class="card-body">
-                        @if ($message = Session::get('success'))
-                        <div class="alert alert-success alert-dismissible show fade">
-                            <div class="alert-body">
-                                <button class="close" data-dismiss="alert">
-                                    <span>&times;</span>
-                                </button>
-                                {{ $message }}
-                            </div>
+    <section class="section">
+        <div class="section-header">
+            <h1>Portofolio Mahasiswa</h1>
+        </div>
+
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div a href="porto.php" class="card card-statistic-1"></a>
+                        <div class="card-icon bg-primary">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 5 70 69" fill="none">
+                                 <path d="M71.9292 8.46226H58.3774V3.17335C58.3774 1.41478 56.9831 0 55.25 0H19.8066C18.0735 0 16.6792 1.41478 16.6792 3.17335V8.46226H3.12736C1.39428 8.46226 0 9.87705 0 11.6356V19.0401C0 23.7605 2.9319 28.613 8.06598 32.3549C12.1706 35.3564 17.1614 37.2604 22.3997 37.8686C26.4913 44.7574 31.2736 47.6002 31.2736 47.6002V57.1203H25.0189C20.419 57.1203 16.6792 59.8573 16.6792 64.5248V66.1114C16.6792 66.9841 17.3829 67.6981 18.2429 67.6981H56.8137C57.6737 67.6981 58.3774 66.9841 58.3774 66.1114V64.5248C58.3774 59.8573 54.6376 57.1203 50.0377 57.1203H43.783V47.6002C43.783 47.6002 48.5653 44.7574 52.6569 37.8686C57.9083 37.2604 62.899 35.3564 66.9906 32.3549C72.1117 28.613 75.0566 23.7605 75.0566 19.0401V11.6356C75.0566 9.87705 73.6623 8.46226 71.9292 8.46226ZM12.9394 25.4926C9.75996 23.1654 8.33962 20.5739 8.33962 19.0401V16.9245H16.7053C16.8356 21.235 17.4611 25.0166 18.3732 28.3221C16.4056 27.6346 14.5683 26.6826 12.9394 25.4926ZM66.717 19.0401C66.717 21.1689 64.4106 23.8133 62.1172 25.4926C60.4883 26.6826 58.638 27.6346 56.6703 28.3221C57.5825 25.0166 58.208 21.235 58.3383 16.9245H66.717V19.0401Z" fill="white"/></svg></i>
                         </div>
-                        @endif
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="table-2">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Jurusan</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($jurusan as $result => $data)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->nama_jurusan }}</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <a href="{{ route('jurusan.edit', $data->id) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                                <form method="POST" action="{{ route('jurusan.destroy', $data->id) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-sm show_confirm" data-toggle="tooltip" title='Delete' style="margin-left: 8px"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Kompetisi</h4>
+                            </div>
+                            <div class="card-body">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Tambah Jurusan</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-success">
+                            <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 5 70 69" fill="none">
+                                 <path d="M71.9292 8.46226H58.3774V3.17335C58.3774 1.41478 56.9831 0 55.25 0H19.8066C18.0735 0 16.6792 1.41478 16.6792 3.17335V8.46226H3.12736C1.39428 8.46226 0 9.87705 0 11.6356V19.0401C0 23.7605 2.9319 28.613 8.06598 32.3549C12.1706 35.3564 17.1614 37.2604 22.3997 37.8686C26.4913 44.7574 31.2736 47.6002 31.2736 47.6002V57.1203H25.0189C20.419 57.1203 16.6792 59.8573 16.6792 64.5248V66.1114C16.6792 66.9841 17.3829 67.6981 18.2429 67.6981H56.8137C57.6737 67.6981 58.3774 66.9841 58.3774 66.1114V64.5248C58.3774 59.8573 54.6376 57.1203 50.0377 57.1203H43.783V47.6002C43.783 47.6002 48.5653 44.7574 52.6569 37.8686C57.9083 37.2604 62.899 35.3564 66.9906 32.3549C72.1117 28.613 75.0566 23.7605 75.0566 19.0401V11.6356C75.0566 9.87705 73.6623 8.46226 71.9292 8.46226ZM12.9394 25.4926C9.75996 23.1654 8.33962 20.5739 8.33962 19.0401V16.9245H16.7053C16.8356 21.235 17.4611 25.0166 18.3732 28.3221C16.4056 27.6346 14.5683 26.6826 12.9394 25.4926ZM66.717 19.0401C66.717 21.1689 64.4106 23.8133 62.1172 25.4926C60.4883 26.6826 58.638 27.6346 56.6703 28.3221C57.5825 25.0166 58.208 21.235 58.3383 16.9245H66.717V19.0401Z" fill="white"/></svg></i>
                         </div>
-                        <div class="modal-body">
-                            <form action="{{ route('jurusan.store') }}" method="POST">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        @if ($errors->any())
-                                        <div class="alert alert-danger alert-dismissible show fade">
-                                            <div class="alert-body">
-                                                <button class="close" data-dismiss="alert">
-                                                    <span>&times;</span>
-                                                </button>
-                                                @foreach ($errors->all() as $error )
-                                                {{ $error }}
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                        @endif
-                                        <div class="form-group">
-                                            <label for="nama_jurusan">Nama Jurusan</label>
-                                            <input type="text" id="nama_jurusan" name="nama_jurusan" class="form-control @error('nama_jurusan') is-invalid @enderror" placeholder="{{ __('Nama Jurusan') }}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer br">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                </div>
-                            </form>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Penghargaan</h4>
+                            </div>
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-warning">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 5 70 69" fill="none">
+                                 <path d="M71.9292 8.46226H58.3774V3.17335C58.3774 1.41478 56.9831 0 55.25 0H19.8066C18.0735 0 16.6792 1.41478 16.6792 3.17335V8.46226H3.12736C1.39428 8.46226 0 9.87705 0 11.6356V19.0401C0 23.7605 2.9319 28.613 8.06598 32.3549C12.1706 35.3564 17.1614 37.2604 22.3997 37.8686C26.4913 44.7574 31.2736 47.6002 31.2736 47.6002V57.1203H25.0189C20.419 57.1203 16.6792 59.8573 16.6792 64.5248V66.1114C16.6792 66.9841 17.3829 67.6981 18.2429 67.6981H56.8137C57.6737 67.6981 58.3774 66.9841 58.3774 66.1114V64.5248C58.3774 59.8573 54.6376 57.1203 50.0377 57.1203H43.783V47.6002C43.783 47.6002 48.5653 44.7574 52.6569 37.8686C57.9083 37.2604 62.899 35.3564 66.9906 32.3549C72.1117 28.613 75.0566 23.7605 75.0566 19.0401V11.6356C75.0566 9.87705 73.6623 8.46226 71.9292 8.46226ZM12.9394 25.4926C9.75996 23.1654 8.33962 20.5739 8.33962 19.0401V16.9245H16.7053C16.8356 21.235 17.4611 25.0166 18.3732 28.3221C16.4056 27.6346 14.5683 26.6826 12.9394 25.4926ZM66.717 19.0401C66.717 21.1689 64.4106 23.8133 62.1172 25.4926C60.4883 26.6826 58.638 27.6346 56.6703 28.3221C57.5825 25.0166 58.208 21.235 58.3383 16.9245H66.717V19.0401Z" fill="white"/></svg></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Karir Organisasi</h4>
+                            </div>
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-danger">
+                        <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewBox="0 5 70 69" fill="none">
+                                 <path d="M71.9292 8.46226H58.3774V3.17335C58.3774 1.41478 56.9831 0 55.25 0H19.8066C18.0735 0 16.6792 1.41478 16.6792 3.17335V8.46226H3.12736C1.39428 8.46226 0 9.87705 0 11.6356V19.0401C0 23.7605 2.9319 28.613 8.06598 32.3549C12.1706 35.3564 17.1614 37.2604 22.3997 37.8686C26.4913 44.7574 31.2736 47.6002 31.2736 47.6002V57.1203H25.0189C20.419 57.1203 16.6792 59.8573 16.6792 64.5248V66.1114C16.6792 66.9841 17.3829 67.6981 18.2429 67.6981H56.8137C57.6737 67.6981 58.3774 66.9841 58.3774 66.1114V64.5248C58.3774 59.8573 54.6376 57.1203 50.0377 57.1203H43.783V47.6002C43.783 47.6002 48.5653 44.7574 52.6569 37.8686C57.9083 37.2604 62.899 35.3564 66.9906 32.3549C72.1117 28.613 75.0566 23.7605 75.0566 19.0401V11.6356C75.0566 9.87705 73.6623 8.46226 71.9292 8.46226ZM12.9394 25.4926C9.75996 23.1654 8.33962 20.5739 8.33962 19.0401V16.9245H16.7053C16.8356 21.235 17.4611 25.0166 18.3732 28.3221C16.4056 27.6346 14.5683 26.6826 12.9394 25.4926ZM66.717 19.0401C66.717 21.1689 64.4106 23.8133 62.1172 25.4926C60.4883 26.6826 58.638 27.6346 56.6703 28.3221C57.5825 25.0166 58.208 21.235 58.3383 16.9245H66.717V19.0401Z" fill="white"/></svg></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Kewirausahaan</h4>
+                            </div>
+                            <div class="card-body">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
-
-@push('script')
-<script type="text/javascript">
-    $('.show_confirm').click(function(event) {
-        var form = $(this).closest("form");
-        var name = $(this).data("name");
-        event.preventDefault();
-        swal({
-                title: `Yakin ingin menghapus data ini?`
-                , text: "Data akan terhapus secara permanen!"
-                , icon: "warning"
-                , buttons: true
-                , dangerMode: true
-            , })
-            .then((willDelete) => {
-                if (willDelete) {
-                    form.submit();
-                }
-            });
-    });
-
-</script>
-@endpush
