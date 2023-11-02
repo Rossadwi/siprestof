@@ -29,7 +29,8 @@
                                         <th>No</th>
                                         <th>Nama Mahasiswa</th>
                                         <th>NIM</th>
-                                        <th>Kelas</th>
+                                        <th>Alamat</th>
+                                        <th>No.Telp</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -39,7 +40,8 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nama }}</td>
                                         <td>{{ $data->nis }}</td>
-                                        <td>{{ $data->kelas_id }}</td>
+                                        <td>{{ $data->alamat }}</td>
+                                        <td>{{ $data->telp }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <a href="{{ route('siswa.show', Crypt::encrypt($data->id)) }}" class="btn btn-primary btn-sm" style="margin-right: 8px"><i class="nav-icon fas fa-user"></i> &nbsp; Profile</a>
@@ -98,15 +100,6 @@
                                                 <label for="telp">No. Telp</label>
                                                 <input type="number" id="telp" name="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="{{ __('No. Telp Mahasiswa') }}">
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="kelas_id">Kelas</label>
-                                            <select id="kelas_id" name="kelas_id" class="select2 form-control @error('kelas_id') is-invalid @enderror">
-                                                <option value="">-- Pilih kelas --</option>
-                                                @foreach ($kelas as $data )
-                                                <option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
-                                                @endforeach
-                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Alamat</label>

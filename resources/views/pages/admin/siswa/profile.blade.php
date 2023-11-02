@@ -24,11 +24,10 @@
                         <div class="profile-widget-description pb-0">
                             <div class="profile-widget-name">{{ $siswa->nama }}
                                 <div class="text-muted d-inline font-weight-normal">
-                                    <div class="slash"></div> Mahasiswa {{ $siswa->kelas->nama_kelas }}
+                                    <div class="slash"></div> Mahasiswa
                                 </div>
                             </div>
-                            <label for="alamat">Alamat</label>
-                            <p>{{ $siswa->alamat }}</p>
+                            <label for="alamat">Alamat : {{ $siswa->alamat }}</label>
                         </div>
                     </div>
                 </div>

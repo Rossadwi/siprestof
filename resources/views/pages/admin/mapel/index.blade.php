@@ -8,8 +8,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4>List Mata Pelajaran</h4>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Data Mapel</button>
+                        <h4>Prestasi Mahasiswa Unggulan</h4>
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('success'))
@@ -23,7 +22,7 @@
                         </div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table table-striped" id="table-2">
+                            <!-- <table class="table table-striped" id="table-2">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -51,7 +50,7 @@
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                            </table> -->
                         </div>
                     </div>
                 </div>

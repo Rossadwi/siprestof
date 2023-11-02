@@ -25,5 +25,11 @@ class KelasSeeder extends Seeder
             'jurusan_id' => 2,
             'guru_id' => 2,
         ]);
+
+        DB::table('kelas')->insert([
+            'nama_kelas' => 'X IPS 1',
+            'jurusan_id' => 2,
+            'guru_id' => 2,
+        ]);
     }
 }

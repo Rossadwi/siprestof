@@ -55,20 +55,6 @@
                                     <label>Alamat</label>
                                     <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" placeholder="{{ __('Alamat') }}">{{ $siswa->alamat }}</textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="kelas_id">Kelas</label>
-                                    <select id="kelas_id" name="kelas_id" class="select2bs4 form-control @error('kelas_id') is-invalid @enderror">
-                                        <option value="">-- Pilih Kelas --</option>
-                                        @foreach ($kelas as $data )
-                                            <option value="{{ $data->id }}"
-                                            @if ($siswa->kelas_id == $data->id)
-                                                selected
-                                            @endif
-                                        >{{ $data->nama_kelas }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
                                 <button type="submit" class="btn btn-primary"><i class="nav-icon fas fa-save"></i> &nbsp; Simpan Perubahan</button>
                             </form>
                         </div>

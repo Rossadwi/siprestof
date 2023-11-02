@@ -49,9 +49,4 @@ class User extends Authenticatable
         $guru = Guru::where('nip', $id)->first();
         return $guru;
     }
-
-    public function siswa($id) {
-        $siswa = Siswa::where('nis', $id)->first();
-        return $siswa;
-    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\GuruController;
+use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\JurusanController;
@@ -10,6 +10,8 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TugasController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KompetisiController;
+use App\Http\Controllers\PenghargaanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,7 +45,7 @@ Route::group(['middleware' => ['auth', 'checkRole:guru']], function () {
     Route::get('/guru/dashboard', [HomeController::class, 'guru'])->name('guru.dashboard');
     Route::resource('materi', MateriController::class);
     Route::resource('tugas', TugasController::class);
-    Route::get('/jawaban-download/{id}', [TugasController::class, 'downloadJawaban'])->name('guru.jawaban.download');
+    Route::resource('pengajuan', PengajuanController::class);
 });
 Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
     Route::get('/siswa/dashboard', [HomeController::class, 'siswa'])->name('siswa.dashboard');
@@ -55,11 +57,14 @@ Route::group(['middleware' => ['auth', 'checkRole:siswa']], function () {
 });
 Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admin/dashboard', [HomeController::class, 'admin'])->name('admin.dashboard');
+    Route::get('admin/siswa',[HomeController::class, 'siswa'])->name('admin.siswa');
     Route::resource('jurusan', JurusanController::class);
+    Route::resource('kompetisi', KompetisiController::class);
+    Route::resource('penghargaan', PenghargaanController::class);
     Route::resource('mapel', MapelController::class);
-    Route::resource('guru', GuruController::class);
+    // Route::resource('guru', GuruController::class);
     Route::resource('kelas', KelasController::class);
     Route::resource('siswa', SiswaController::class);
     Route::resource('user', UserController::class);
-    Route::resource('jadwal', JadwalController::class);
+    // Route::resource('jadwal', JadwalController::class);
 });

@@ -8,8 +8,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4>List Tugas</h4>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Tugas</button>
+                        <h4>Daftar Capaian Prestasi</h4>
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('success'))
@@ -24,34 +23,6 @@
                         @endif
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-2">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul Tugas</th>
-                                        <th>Kelas</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($tugas as $result => $data)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->judul }}</td>
-                                        <td>{{ $data->kelas->nama_kelas }}</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <a class="btn btn-primary btn-sm mr-2" href="{{ route('tugas.show', $data->id) }}"><i class="nav-icon fas fa-eye"></i>&nbsp; Lihat jawaban</a>
-                                                <a href="{{ route('tugas.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                                <form method="POST" action="{{ route('tugas.destroy', $data->id) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-sm show_confirm" data-toggle="tooltip" title='Delete' style="margin-left: 8px"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
                             </table>
                         </div>
                     </div>

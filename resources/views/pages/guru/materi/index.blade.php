@@ -8,8 +8,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
-                        <h4>List Materi</h4>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Tambah Materi</button>
+                        <h4>Data Diri</h4>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="nav-icon fas fa-folder-plus"></i>&nbsp; Edit Profil</button>
                     </div>
                     <div class="card-body">
                         @if ($message = Session::get('success'))
@@ -32,39 +32,6 @@
                             </div>
                         </div>
                         @endif
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="table-2">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Judul Materi</th>
-                                        <th>Deskripsi</th>
-                                        <th>Kelas</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($materi as $data)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->judul }}</td>
-                                        <td>{{ $data->deskripsi }}</td>
-                                        <td>{{ $data->kelas->nama_kelas }}</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <a href="{{ route('materi.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                                <form method="POST" action="{{ route('materi.destroy', $data->id) }}">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger btn-sm show_confirm" data-toggle="tooltip" title='Delete' style="margin-left: 8px"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
