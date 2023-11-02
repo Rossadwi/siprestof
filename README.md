@@ -1,39 +1,11 @@
 
-# Sistem Informasi Sekolah
-
-Sistem informasi sekolah berbasis laravel 8 dengan template dashboard
-[Stisla](https://getstisla.com/)
-## Authors
-
-- [Pascal Adnan](https://www.github.com/Rossadwi)
-
-
-## Fitur
-
-- CRUD Jurusan
-- CRUD Mata Pelajaran
-- CRUD Guru
-- CRUD Kelas
-- CRUD User
-- CRUD Materi
-- CRUD Tugas & Jawaban
-- CRUD Jadwal Sekolah
-
-
-## Screenshots
-
-![Login](https://i.ibb.co/QrvFVsq/download.png)
-
-![Dashboard](https://i.ibb.co/4Vvff5F/Screenshot-3.jpg)
-
-
 ## Instalasi
 
 clone project atau download
 
 ```bash
   git clone https://github.com/Rossadwi/siprestof.git
-  cd Sistem-Informasi-Sekolah
+  cd SIPRESTOFF
   npm install
   composer install
   cp .env.example .env
@@ -65,24 +37,7 @@ Admin
   password : admin123
 ```
 
-Guru
-```bash
-  email : budi@mail.com
-  password : budi123
-
-  email : gunawan@mail.com
-  password : gunawan123
-```
-
-Siswa
-```bash
-  email : kevin@mail.com
-  password : kevin123
-
-  email : siska@mail.com
-  password : siska123
-```
-
+# siprestof
 # siprestof
 # siprestof
 # siprestof
